@@ -1,0 +1,10 @@
+<h2>🛒 Your Cart</h2>
+
+{% for product in products %}
+  <p>{{ product.name }} - ${{ product.price }}</p>
+{% endfor %}
+
+<hr>
+<h3>Total: ${{ total }}</h3>
+
+<a href="/">⬅ Continue Shopping</a>

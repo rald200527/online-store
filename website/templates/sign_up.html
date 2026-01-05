@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <div class="auth-title">📝 Sign Up</div>
+
+    <form method="POST">
+      <!-- Email -->
+      <div class="form-group">
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="Email"
+          required
+        />
+      </div>
+
+      <!-- Date of Birth -->
+      <div class="form-group">
+        <input
+          type="date"
+          name="dob"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="Password"
+          required
+        />
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <input
+          type="password"
+          name="confirm_password"
+          class="form-control"
+          placeholder="Confirm Password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-block mt-3">
+        Create Account
+      </button>
+    </form>
+
+    <p class="text-center mt-3">
+      Already have an account?
+      <a href="{{ url_for('auth.login') }}">Login</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
