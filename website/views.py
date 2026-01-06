@@ -5,11 +5,14 @@ from .models import Product
 views = Blueprint('views', __name__)
 
 # STORE / HOME PAGE
+from flask_login import login_required
+
 @views.route('/')
-@views.route('/store')
+@login_required
 def store():
     products = Product.query.all()
     return render_template('store.html', products=products)
+
 
 
 # ADD TO CART
